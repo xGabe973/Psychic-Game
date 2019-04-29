@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="8-UTF">
+        <title>Pyschic Game</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/reset.css">
+    </head>
+    <body>
+        <h1>The Pyschic Game</h1>\
+        <br>
+        <div>
+            <p>Press any letter key to play & Guess the letter I'm thinking of</p>
+            <p id="wins-text"></p>
+            <p id="losses-text"></p>
+            <p id="guessLeft-text"></p>
+            <p id="guessSoFar-text"></p>
+        </div>
+
+        <script type="text/javascript">
+        
+        var computerChoices = ['q','w','e','r','t','y','u','i','o','p',
+        'a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'];
+        
+        var wins = 0;
+        var losses = 0;
+        var guessLeft = 9;
+        var guessSoFarText = " ";
+        
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
+        var guessLeftText = document.getElementById("guessLeft-text");
+        var guessSoFarText = document.getElementById("guessSoFar-text");
+        
+        document.onkeyup = function(event) {
+            var userGuess = event.key;
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            if (userGuess === computerGuess){
+                wins++;}
+                else {
+                losses++;  }
+        }
+        
+        winsText.textContent = "Wins: " + wins;
+        lossesText.textContent = "Losses: " + losses;
+        guessLeftText.textContent = "Guesses left: ";
+        guessSoFarText.textContent = "Your guesses so far: " + userGuess;
+    
+        </script>
+    </body>
+</html>
