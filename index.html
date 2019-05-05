@@ -1,59 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="8-UTF">
-        <title>Pyschic Game</title>
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/reset.css">
-    </head>
-    <body>
-        <h1>The Pyschic Game</h1>\
-        <br>
-        <div>
-            <p>Press any letter key to play & Guess the letter I'm thinking of</p>
-            <p id="wins-text"></p>
-            <br/>
-            <p id="losses-text"></p>
-            <br/>
-            <p id="guessLeft-text"></p>
-            <br/>
-            <p id="userChoice-text"></p>
-        </div>
 
-        <script type="text/javascript">
-        
-        var computerChoices = ['q','w','e','r','t','y','u','i','o','p',
-        'a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'];
-        
-        var wins = 0;
-        var losses = 0;
-        var guessLeft = 9;
-        var userChoiceText = " ";
+<head>
+    <meta charset="8-UTF">
+    <title>Pyschic Game</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    
+</head>
 
-        var winsText = document.getElementById("wins-text");
-        var lossesText = document.getElementById("losses-text");
-        var guessLeftText = document.getElementById("guessLeft-text");
-        var userChoiceText = document.getElementById("userChoice-text");
-        
-        document.onkeyup = function(event) {
-            var userGuess = event.key;
-            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            if (userGuess === computerGuess){
-                wins++;}
-                else {
-                losses++;
-                guessLeft--;
-                }   
-        winsText.innerHTML = "Wins: " + wins;
-        lossesText.innerHTML = "Losses: " + losses;
-        guessLeftText.innerHTML = "Guesses left: " + guessLeft;
-        userChoiceText.innerHTML = "What you've tried so far: " + userGuess;
-        endGame = function(){
-            
-        }
-                    // make a function to check if there are any guesses left. and does something when guesses Left = 0
-        }
-        userChoice.appendChild("#userChoiceText")
-        </script>
-    </body>
+<body>
+    <h1>The Pyschic Game</h1>\
+    <br>
+    <div>
+        <p>Press any letter key to play & Guess the letter I'm thinking of</p>
+        <p id="wins-text"></p>
+        <br />
+        <p id="losses-text"></p>
+        <br />
+        <p id="guessLeft-text"></p>
+        <br />
+        <p id="userChoice-text"></p>
+    </div>
+    <script src="assets/javascript/game.js"></script>
+</body>
+
 </html>
