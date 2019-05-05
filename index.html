@@ -12,9 +12,12 @@
         <div>
             <p>Press any letter key to play & Guess the letter I'm thinking of</p>
             <p id="wins-text"></p>
+            <br/>
             <p id="losses-text"></p>
+            <br/>
             <p id="guessLeft-text"></p>
-            <p id="guessSoFar-text"></p>
+            <br/>
+            <p id="userChoice-text"></p>
         </div>
 
         <script type="text/javascript">
@@ -25,12 +28,12 @@
         var wins = 0;
         var losses = 0;
         var guessLeft = 9;
-        var guessSoFarText = " ";
-        
+        var userChoiceText = " ";
+
         var winsText = document.getElementById("wins-text");
         var lossesText = document.getElementById("losses-text");
         var guessLeftText = document.getElementById("guessLeft-text");
-        var guessSoFarText = document.getElementById("guessSoFar-text");
+        var userChoiceText = document.getElementById("userChoice-text");
         
         document.onkeyup = function(event) {
             var userGuess = event.key;
@@ -38,14 +41,19 @@
             if (userGuess === computerGuess){
                 wins++;}
                 else {
-                losses++;  }
+                losses++;
+                guessLeft--;
+                }   
+        winsText.innerHTML = "Wins: " + wins;
+        lossesText.innerHTML = "Losses: " + losses;
+        guessLeftText.innerHTML = "Guesses left: " + guessLeft;
+        userChoiceText.innerHTML = "What you've tried so far: " + userGuess;
+        endGame = function(){
+            
         }
-        
-        winsText.textContent = "Wins: " + wins;
-        lossesText.textContent = "Losses: " + losses;
-        guessLeftText.textContent = "Guesses left: ";
-        guessSoFarText.textContent = "Your guesses so far: " + userGuess;
-    
+                    // make a function to check if there are any guesses left. and does something when guesses Left = 0
+        }
+        userChoice.appendChild("#userChoiceText")
         </script>
     </body>
 </html>
