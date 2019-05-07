@@ -26,12 +26,14 @@ document.onkeyup = function (event) {
     }
     if (userGuess === computerGuess) {
         wins++;
+        alert("Congrats You Won, Play again!");
         endGame();
     }
     else {
         guessLeft--;
         if (guessLeft === 0) {
             losses++;
+            alert("You lose, Try again!");
             endGame();
         }
         guessLetter.push(userGuess);
